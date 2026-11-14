@@ -1,30 +1,1455 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#07090f"><meta name="description" content="NXbytes Digital — experiências digitais para marcas que querem crescer."><title>NXbytes® — Digital experiences</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
-:root{--bg:#07090f;--panel:#0d1422;--line:#ffffff1c;--white:#f4f7fb;--muted:#a4afbf;--blue:#1769ff;--cyan:#29d7f2;--max:1200px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:Manrope,Arial,sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}.container{width:min(var(--max),calc(100% - 52px));margin:auto}.mono{font:11px 'DM Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan)}
-header{position:fixed;z-index:10;top:0;width:100%;background:#07090fc9;backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.nav{height:78px;display:flex;align-items:center;justify-content:space-between}.logo{font-size:22px;font-weight:800;letter-spacing:-1px}.logo b{color:var(--cyan)}.navlinks{display:flex;gap:30px;font-size:12px;color:#b8c2d1}.navlinks a:hover{color:var(--cyan)}.cta,.button{display:inline-flex;padding:13px 19px;border-radius:5px;background:#f4f7fb;color:#080c14;font-size:12px;font-weight:800;transition:.25s}.cta:hover,.button:hover{background:var(--cyan);transform:translateY(-3px)}.menu{display:none;background:none;color:white;border:1px solid var(--line);padding:9px;border-radius:5px}
-.hero{min-height:760px;padding:155px 0 85px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 78% 38%,#125bd533,transparent 43%),linear-gradient(135deg,#080d18,#07090f)}.gridbg{position:absolute;inset:0;opacity:.12;background-image:linear-gradient(#ffffff1a 1px,transparent 1px),linear-gradient(90deg,#ffffff1a 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(90deg,#000,transparent 90%)}.hero:after{content:"";position:absolute;width:580px;height:580px;border:1px solid #29d7f21c;border-radius:50%;right:-130px;top:100px;box-shadow:0 0 0 70px #29d7f208,0 0 0 140px #29d7f205;animation:spin 30s linear infinite}.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:35px}.kicker{display:flex;align-items:center;gap:12px;margin-bottom:25px}.kicker:before{content:"";width:32px;height:1px;background:var(--cyan)}h1{font-size:clamp(48px,6.4vw,86px);line-height:.99;letter-spacing:-.075em;margin:0;font-weight:800}h1 em{font-style:normal;color:transparent;-webkit-text-stroke:1px #eaf2ffb0}h1 span{color:var(--cyan)}.lead{color:var(--muted);font-size:15px;line-height:1.85;max-width:500px;margin:25px 0 30px}.hero-actions{display:flex;gap:22px;align-items:center;flex-wrap:wrap}.under{font-size:12px;font-weight:800;border-bottom:1px solid #738096;padding-bottom:5px}.micro{font:10px 'DM Mono';letter-spacing:.13em;color:#68768b;margin-top:55px;text-transform:uppercase}
-.visual{height:450px;position:relative;perspective:900px}.browser{position:absolute;top:48px;left:3%;width:96%;height:330px;border:1px solid #496185;border-radius:10px;background:linear-gradient(145deg,#14223a,#080e19);overflow:hidden;transform:rotateY(-11deg) rotateX(4deg);box-shadow:0 35px 90px #000b,0 0 55px #087bff20;animation:float 7s ease-in-out infinite}.browserbar{height:34px;border-bottom:1px solid #ffffff1c;display:flex;gap:6px;align-items:center;padding:0 13px}.browserbar i{width:7px;height:7px;border-radius:50%;background:#718198}.address{height:15px;width:48%;background:#ffffff0c;border-radius:3px;margin-left:12px}.screen{height:calc(100% - 34px);padding:26px;display:grid;grid-template-columns:1fr .9fr;align-items:center;background:radial-gradient(ellipse at 80% 75%,#096bff45,transparent 55%)}.screen small{font:9px 'DM Mono';color:var(--cyan);letter-spacing:.15em}.screen h2{font-size:29px;line-height:1.05;letter-spacing:-1.5px;margin:13px 0}.screen p{font-size:9px;color:#aab8ca;max-width:175px}.screen .mini{display:inline-block;background:var(--cyan);color:#06111c;font-size:8px;font-weight:900;padding:8px 10px;margin-top:8px}.orb{width:150px;height:170px;border:1px solid #35baff;border-radius:8px;background:linear-gradient(145deg,#1769ff66,#00d5ff09);display:grid;place-items:center;transform:rotate(12deg);box-shadow:0 0 45px #087bff44}.orb b{font-size:53px;color:#55dfff;text-shadow:0 0 25px #00d5ff}.float{position:absolute;background:#121d30;border:1px solid #405777;border-radius:7px;padding:13px 16px;box-shadow:0 15px 40px #0009;animation:float 6s ease-in-out infinite}.float small{display:block;color:#8d9bb0;font:9px 'DM Mono'}.float strong{font-size:13px}.f1{right:-4px;top:8px}.f2{left:-10px;bottom:20px;animation-delay:-2s}
-.marquee{border-block:1px solid var(--line);background:#0b101a;overflow:hidden;padding:17px 0}.track{display:flex;width:max-content;gap:30px;animation:marquee 32s linear infinite;font:11px 'DM Mono';letter-spacing:.15em;text-transform:uppercase;color:#8490a4}.track b{color:var(--cyan);font-weight:400}
-section.content{padding:110px 0}.head{display:flex;justify-content:space-between;align-items:end;gap:35px;margin-bottom:45px}.head h2{font-size:clamp(34px,4.5vw,58px);line-height:1.04;letter-spacing:-.06em;margin:12px 0 0}.head p{max-width:360px;color:var(--muted);font-size:13px;line-height:1.8;margin:0 0 4px}.services{display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid var(--line)}.service{padding:30px 28px 35px 0;min-height:250px}.service+.service{border-left:1px solid var(--line);padding-left:28px}.num{font:11px 'DM Mono';color:#68788e}.icon{width:44px;height:44px;border:1px solid #315780;border-radius:50%;display:grid;place-items:center;color:var(--cyan);font-size:19px;margin:25px 0 18px}.service h3{font-size:20px;margin:0 0 9px}.service p,.process p{color:var(--muted);font-size:13px;line-height:1.8;margin:0}
-.work{background:#0b101a}.projects{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}.project{height:390px;position:relative;overflow:hidden;border:1px solid var(--line);border-radius:9px;background:#101a2b}.project:before{content:"";position:absolute;width:330px;height:330px;left:25%;top:5%;border-radius:50%;background:#1769ff55;filter:blur(65px)}.project:nth-child(2):before{background:#00c9a955}.window{position:absolute;left:15%;top:15%;width:70%;height:65%;padding:20px;background:#0b1422;border:1px solid #65aaff77;border-radius:8px;transform:rotate(-5deg);box-shadow:0 25px 60px #0009}.project:nth-child(2) .window{transform:rotate(5deg);background:#10231f;border-color:#3ad9b566}.window small{font:9px 'DM Mono';color:var(--cyan)}.window h3{font-size:clamp(20px,3vw,30px);line-height:1.05;max-width:190px;margin:15px 0}.window p{font-size:9px;color:#aab8c9}.bar{height:5px;width:70%;background:#1769ff;border-radius:9px;margin-top:18px}.project:nth-child(2) .bar{background:#37d5a0}.bar.short{width:42%;margin-top:7px}.project-info{position:absolute;bottom:0;left:0;right:0;padding:22px;background:linear-gradient(transparent,#060a12ed)}.project-info small{font:10px 'DM Mono';color:var(--cyan)}.project-info h3{margin:6px 0 0;font-size:19px}
-.process{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.step{border:1px solid var(--line);border-radius:8px;padding:25px;background:linear-gradient(145deg,#111a29,#090e17)}.step b{font:32px 'DM Mono';color:var(--cyan)}.step h3{font-size:17px;margin:22px 0 8px}
-.contact{padding:60px;border:1px solid #31527a;border-radius:10px;background:radial-gradient(ellipse at 90% 0%,#1769ff44,transparent 45%),linear-gradient(120deg,#101d32,#0b101a);display:flex;justify-content:space-between;align-items:center;gap:30px}.contact h2{font-size:clamp(32px,4.5vw,54px);line-height:1.05;letter-spacing:-.06em;margin:12px 0}.contact p{color:var(--muted);font-size:13px}.contact .button{background:var(--cyan)}
-footer{border-top:1px solid var(--line);padding:27px 0;color:#8490a4;font-size:11px}.foot{display:flex;justify-content:space-between;gap:20px;align-items:center}.foot strong{font-size:17px;color:white}.foot strong span{color:var(--cyan)}
-.reveal{opacity:0;transform:translateY(25px);transition:.8s cubic-bezier(.2,.7,.2,1)}.reveal.show{opacity:1;transform:none}
-@keyframes float{0%,100%{translate:0 0}50%{translate:0 -12px}}@keyframes spin{to{transform:rotate(360deg)}}@keyframes marquee{to{transform:translateX(-50%)}}
-@media(max-width:800px){.container{width:calc(100% - 36px)}.navlinks{display:none}.menu{display:block}.cta{font-size:10px;padding:10px}.hero{padding:135px 0 55px;min-height:auto}.hero-inner{grid-template-columns:1fr}.visual{height:365px}.browser{top:25px;height:290px}.screen{padding:19px}.screen h2{font-size:23px}.orb{width:115px;height:140px}.head{display:block}.head p{margin-top:18px}.services,.process{grid-template-columns:1fr}.service,.service+.service{border-left:0;border-bottom:1px solid var(--line);padding:26px 0;min-height:0}.service:last-child{border-bottom:0}.icon{margin:17px 0}.projects{grid-template-columns:1fr}.project{height:330px}.contact{padding:32px 24px;display:block}.contact .button{margin-top:20px}.foot{align-items:flex-start;flex-direction:column}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
-</style></head><body>
-<header><div class="container nav"><a class="logo" href="#">NX<b>bytes</b></a><nav class="navlinks"><a href="#servicos">Serviços</a><a href="#projetos">Projetos</a><a href="#processo">Processo</a><a href="#contato">Contato</a></nav><a class="cta" href="mailto:nxbytestec@gmail.com?subject=Projeto%20NXbytes">Fale sobre seu projeto ↗</a><button class="menu" id="menu">☰</button></div></header>
-<main><section class="hero"><div class="gridbg"></div><div class="container hero-inner"><div><div class="kicker mono">Estúdio digital independente · Brasil</div><h1>Não fazemos só sites.<br><em>Criamos</em> <span>presença.</span></h1><p class="lead">Sua marca merece mais do que estar online. Criamos experiências digitais marcantes, rápidas e pensadas para transformar visitantes em novas oportunidades.</p><div class="hero-actions"><a class="button" href="mailto:nxbytestec@gmail.com?subject=Quero%20um%20site">Vamos criar algo grande ↗</a><a class="under" href="#projetos">Explorar projetos ↓</a></div><div class="micro">Estratégia · Design · Desenvolvimento</div></div>
-<div class="visual"><div class="browser"><div class="browserbar"><i></i><i></i><i></i><div class="address"></div></div><div class="screen"><div><small>DIGITAL EXPERIENCE / 001</small><h2>Make your<br>brand <span>matter.</span></h2><p>Uma experiência digital criada para destacar o que torna sua marca única.</p><b class="mini">DISCOVER MORE ↗</b></div><div class="orb"><b>NX</b></div></div></div><div class="float f1"><small>DESIGN / DEVELOPMENT</small><strong>Built to stand out.</strong></div><div class="float f2"><small>EXPERIÊNCIA DIGITAL</small><strong>∞ Possibilidades</strong></div></div></div></section>
-<div class="marquee"><div class="track"><span>NXbytes digital</span><b>✳</b><span>Sites que impressionam</span><b>✳</b><span>Design com intenção</span><b>✳</b><span>Experiências digitais</span><b>✳</b><span>NXbytes digital</span><b>✳</b><span>Sites que impressionam</span><b>✳</b><span>Design com intenção</span><b>✳</b><span>Experiências digitais</span><b>✳</b></div></div>
-<section class="content" id="servicos"><div class="container"><div class="head reveal"><div><div class="mono">01 / O que fazemos</div><h2>O digital é a primeira impressão.<br>Faça ela valer.</h2></div><p>Unimos visual, clareza e tecnologia para criar uma presença online que trabalha a favor do seu negócio — em qualquer tela.</p></div><div class="services reveal"><article class="service"><div class="num">01 — WEB DESIGN</div><div class="icon">↗</div><h3>Sites institucionais</h3><p>Apresente sua empresa com personalidade, credibilidade e uma navegação simples e elegante.</p></article><article class="service"><div class="num">02 — DIGITAL CATALOG</div><div class="icon">▤</div><h3>Catálogos e vitrines</h3><p>Seus produtos organizados em uma vitrine digital bonita, acessível e fácil de compartilhar.</p></article><article class="service"><div class="num">03 — EXPERIENCE</div><div class="icon">✳</div><h3>Experiências digitais</h3><p>Landing pages e páginas especiais para campanhas, lançamentos e novas ideias.</p></article></div></div></section>
-<section class="content work" id="projetos"><div class="container"><div class="head reveal"><div><div class="mono">02 / Direção criativa</div><h2>Design que chama.<br>Experiência que fica.</h2></div><p>Estudos conceituais criados para demonstrar possibilidades visuais. Cada projeto real começa com a identidade e os objetivos do cliente.</p></div><div class="projects reveal"><article class="project"><div class="window"><small>NOVA COLEÇÃO / 2026</small><h3>Vista seu<br>próximo capítulo.</h3><p>Moda feita para acompanhar seu ritmo.</p><div class="bar"></div><div class="bar short"></div></div><div class="project-info"><small>CONCEITO 01 / MODA</small><h3>Ateliê Norte — Vitrine digital</h3></div></article><article class="project"><div class="window"><small>FRESH FOOD / DAILY</small><h3>O sabor de<br>um bom dia.</h3><p>Feito com cuidado. Servido com carinho.</p><div class="bar"></div><div class="bar short"></div></div><div class="project-info"><small>CONCEITO 02 / GASTRONOMIA</small><h3>Verde Mesa — Experiência de marca</h3></div></article></div></div></section>
-<section class="content" id="processo"><div class="container"><div class="head reveal"><div><div class="mono">03 / Como trabalhamos</div><h2>Clareza em cada etapa.<br>Intenção em cada detalhe.</h2></div><p>Um processo próximo e transparente, do primeiro papo até a entrega do projeto.</p></div><div class="process reveal"><article class="step"><b>01</b><h3>Imersão</h3><p>Conhecemos sua empresa, seu público e o que você quer conquistar com o projeto.</p></article><article class="step"><b>02</b><h3>Criação</h3><p>Desenhamos a experiência, desenvolvemos a página e refinamos os detalhes com você.</p></article><article class="step"><b>03</b><h3>Publicação</h3><p>Depois da aprovação, preparamos tudo para colocar seu novo site no ar.</p></article></div></div></section>
-<section class="content" id="contato"><div class="container"><div class="contact reveal"><div><div class="mono">04 / O próximo passo é seu</div><h2>Vamos construir<br>algo memorável?</h2><p>Conte sua ideia. A primeira conversa não custa nada.</p></div><a class="button" href="mailto:nxbytestec@gmail.com?subject=Vamos%20conversar%20-%20NXbytes">Iniciar conversa ↗</a></div></div></section></main>
-<footer><div class="container foot"><strong>NX<span>bytes</span> <small style="font:9px 'DM Mono';color:#8490a4">DIGITAL</small></strong><span>© <span id="year"></span> NXbytes Digital. Sua ideia, nossa tecnologia.</span><a href="mailto:nxbytestec@gmail.com">nxbytestec@gmail.com</a></div></footer>
-<script>
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(x=>io.observe(x));document.getElementById('year').textContent=new Date().getFullYear();document.getElementById('menu').onclick=()=>{let n=document.querySelector('.navlinks');n.style.cssText=n.style.display==='flex'?'':'display:flex;position:absolute;top:68px;left:18px;right:18px;padding:20px;background:#0d1422;border:1px solid #ffffff22;border-radius:8px;flex-direction:column;gap:18px'};
-</script></body></html>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f9fc">
+  <meta name="description" content="NXbytes Digital — criamos experiências digitais que impulsionam negócios.">
+  <title>NXbytes Digital | Sua marca em outro nível</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --blue: #2455ed;
+      --blue-dark: #153bc0;
+      --cyan: #17c6d6;
+      --ink: #151a2b;
+      --muted: #69748a;
+      --paper: #f7f9fc;
+      --white: #ffffff;
+      --line: #e7ebf3;
+      --radius: 22px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 48px));
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    header {
+      height: 78px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .navbar {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: "Manrope", sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -1.2px;
+    }
+
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 11px;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      color: white;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 7px 18px #2455ed40;
+    }
+
+    .logo span {
+      color: var(--blue);
+    }
+
+    .logo small {
+      display: block;
+      font-size: 8px;
+      letter-spacing: 3px;
+      color: #8992a5;
+      margin-top: -3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #535d72;
+    }
+
+    .nav-links a {
+      transition: color .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 15px 22px;
+      border-radius: 100px;
+      background: var(--blue);
+      color: white;
+      font-size: 12px;
+      font-weight: 800;
+      border: 0;
+      cursor: pointer;
+      box-shadow: 0 8px 22px #2455ed30;
+      transition: .25s ease;
+    }
+
+    .button:hover {
+      background: var(--blue-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 13px 28px #2455ed40;
+    }
+
+    .button-outline {
+      background: white;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      box-shadow: none;
+    }
+
+    .button-outline:hover {
+      background: #edf2ff;
+      color: var(--blue);
+    }
+
+    .menu-button {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: white;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 100px 0 85px;
+      background: linear-gradient(115deg, #f7f9fc, #f0f5ff 60%, #effbfc);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 650px;
+      height: 650px;
+      right: -230px;
+      top: -300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #b8d0ff99, transparent 68%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      left: -250px;
+      bottom: -250px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #b4f3ed80, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 45px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 14px;
+      border-radius: 100px;
+      background: #ffffffbd;
+      border: 1px solid #dfe6f5;
+      color: #43506c;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .eyebrow i {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #20bda9;
+      box-shadow: 0 0 0 4px #20bda91c;
+    }
+
+    h1 {
+      max-width: 680px;
+      margin: 27px 0 22px;
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(48px, 6vw, 76px);
+      line-height: 1.02;
+      letter-spacing: -4px;
+      font-weight: 800;
+    }
+
+    h1 span {
+      color: var(--blue);
+    }
+
+    .hero-description {
+      max-width: 490px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .hero-proof {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 40px;
+      color: #7c8596;
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    .hero-proof strong {
+      color: #29334b;
+    }
+
+    .proof-dots {
+      display: flex;
+    }
+
+    .proof-dots i {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      border: 2px solid var(--paper);
+      margin-left: -6px;
+      background: linear-gradient(135deg, #ffbd79, #ec7288);
+    }
+
+    .proof-dots i:nth-child(2) {
+      background: linear-gradient(135deg, #7773e8, #c2b8ff);
+    }
+
+    .proof-dots i:nth-child(3) {
+      background: linear-gradient(135deg, #24b9c7, #8ee4d8);
+    }
+
+    /* HERO VISUAL */
+
+    .hero-visual {
+      position: relative;
+      height: 430px;
+      display: grid;
+      place-items: center;
+    }
+
+    .visual-glow {
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #dce7ff, #d9f8f7);
+      animation: pulse 7s ease-in-out infinite;
+    }
+
+    .dashboard {
+      position: relative;
+      width: min(100%, 440px);
+      min-height: 305px;
+      padding: 19px;
+      border-radius: 22px;
+      background: white;
+      border: 1px solid white;
+      box-shadow: 0 32px 75px #354c7928;
+      transform: rotate(-3deg);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .dashboard-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #edf0f5;
+      padding-bottom: 14px;
+    }
+
+    .dashboard-logo {
+      font-family: "Manrope", sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .dashboard-logo span {
+      color: var(--blue);
+    }
+
+    .online {
+      padding: 6px 9px;
+      border-radius: 100px;
+      background: #e9faf6;
+      color: #159b8c;
+      font-size: 9px;
+    }
+
+    .dashboard h3 {
+      margin: 20px 0 5px;
+      font-family: "Manrope", sans-serif;
+      font-size: 17px;
+    }
+
+    .dashboard > p {
+      color: #8992a2;
+      font-size: 10px;
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 17px;
+    }
+
+    .dashboard-card {
+      padding: 13px;
+      border: 1px solid #edf0f5;
+      border-radius: 12px;
+    }
+
+    .dashboard-card small {
+      color: #929aaa;
+      font-size: 9px;
+    }
+
+    .dashboard-card strong {
+      display: block;
+      margin-top: 5px;
+      font-family: "Manrope", sans-serif;
+      font-size: 20px;
+    }
+
+    .chart {
+      height: 48px;
+      display: flex;
+      align-items: end;
+      gap: 5px;
+      margin-top: 8px;
+    }
+
+    .chart i {
+      flex: 1;
+      border-radius: 5px 5px 2px 2px;
+      background: linear-gradient(180deg, var(--cyan), var(--blue));
+    }
+
+    .chart i:nth-child(1) { height: 32%; }
+    .chart i:nth-child(2) { height: 53%; }
+    .chart i:nth-child(3) { height: 45%; }
+    .chart i:nth-child(4) { height: 78%; }
+    .chart i:nth-child(5) { height: 65%; }
+    .chart i:nth-child(6) { height: 96%; }
+
+    .floating-card {
+      position: absolute;
+      padding: 13px 17px;
+      border: 1px solid #edf0f5;
+      border-radius: 14px;
+      background: white;
+      box-shadow: 0 14px 35px #263b641c;
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .floating-card small {
+      display: block;
+      color: #8b94a5;
+      font-size: 9px;
+    }
+
+    .floating-card strong {
+      font-family: "Manrope", sans-serif;
+      font-size: 14px;
+    }
+
+    .floating-one {
+      right: -4px;
+      top: 30px;
+    }
+
+    .floating-two {
+      left: -7px;
+      bottom: 22px;
+      animation-delay: -2s;
+    }
+
+    .floating-two strong {
+      color: #129f92;
+    }
+
+    /* VALUE STRIP */
+
+    .value-strip {
+      padding: 25px 0;
+      background: white;
+      border-block: 1px solid var(--line);
+    }
+
+    .value-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .value-inner small {
+      color: #8991a0;
+      font-size: 11px;
+    }
+
+    .value-inner strong {
+      color: #7b8497;
+      font-family: "Manrope", sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    /* GENERAL SECTIONS */
+
+    section.content-section {
+      padding: 95px 0;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 35px;
+      margin-bottom: 40px;
+    }
+
+    .section-tag {
+      color: var(--blue);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      max-width: 630px;
+      margin-top: 13px;
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(34px, 4.3vw, 53px);
+      line-height: 1.08;
+      letter-spacing: -2.5px;
+    }
+
+    .section-heading > p {
+      max-width: 360px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    /* SERVICES */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .service-card {
+      padding: 28px;
+      min-height: 260px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: white;
+      box-shadow: 0 5px 18px #25345406;
+      transition: .3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: #cbd8ff;
+      box-shadow: 0 20px 45px #25345413;
+    }
+
+    .service-icon {
+      width: 47px;
+      height: 47px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 25px;
+      border-radius: 14px;
+      background: #edf2ff;
+      color: var(--blue);
+      font-size: 22px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 10px;
+      font-family: "Manrope", sans-serif;
+      font-size: 19px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .service-card a {
+      display: inline-block;
+      margin-top: 20px;
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    /* PORTFOLIO */
+
+    .portfolio {
+      position: relative;
+      overflow: hidden;
+      background: #101c40;
+      color: white;
+    }
+
+    .portfolio::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 88% 12%, #315de177, transparent 34%),
+        radial-gradient(circle at 10% 100%, #13bfc24a, transparent 30%);
+      pointer-events: none;
+    }
+
+    .portfolio .container {
+      position: relative;
+    }
+
+    .portfolio .section-tag {
+      color: #7ce6e8;
+    }
+
+    .portfolio .section-heading > p {
+      color: #c4cce0;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .project-card {
+      padding: 23px;
+      border: 1px solid #ffffff25;
+      border-radius: 21px;
+      background: #ffffff0b;
+      transition: .3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      background: #ffffff13;
+    }
+
+    .project-art {
+      height: 175px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+      border-radius: 14px;
+      background: linear-gradient(130deg, #2055ec, #22c8d3);
+    }
+
+    .project-art::before,
+    .project-art::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border: 1px solid #ffffff66;
+      border-radius: 50%;
+    }
+
+    .project-art::after {
+      width: 260px;
+      height: 260px;
+    }
+
+    .project-art strong {
+      position: relative;
+      z-index: 1;
+      font-family: "Manrope", sans-serif;
+      font-size: 48px;
+      letter-spacing: -3px;
+    }
+
+    .project-card:nth-child(2) .project-art {
+      background: linear-gradient(130deg, #7954e8, #e46eaa);
+    }
+
+    .project-card > small {
+      display: block;
+      margin-top: 18px;
+      color: #7ce6e8;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+    }
+
+    .project-card h3 {
+      margin: 8px 0;
+      font-family: "Manrope", sans-serif;
+      font-size: 19px;
+    }
+
+    .project-card p {
+      color: #c5cde0;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .portfolio-note {
+      margin-top: 20px;
+      color: #aab7d2;
+      font-size: 11px;
+    }
+
+    /* PROCESS */
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .process-card {
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: white;
+    }
+
+    .process-number {
+      color: #d2dcf5;
+      font-family: "Manrope", sans-serif;
+      font-size: 38px;
+      font-weight: 800;
+    }
+
+    .process-card h3 {
+      margin: 17px 0 9px;
+      font-family: "Manrope", sans-serif;
+      font-size: 17px;
+    }
+
+    .process-card p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    /* CONTACT */
+
+    .contact-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      padding: 55px;
+      border: 1px solid #dce6f6;
+      border-radius: 26px;
+      background: linear-gradient(110deg, #e9f0ff, #e9fbfa);
+    }
+
+    .contact-box h2 {
+      font-size: clamp(34px, 4vw, 50px);
+    }
+
+    .contact-box p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 28px 0;
+      background: white;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      color: #8790a0;
+      font-size: 10px;
+    }
+
+    /* ANIMATIONS */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity .75s ease, transform .75s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-copy {
+      animation: appear .9s ease both;
+    }
+
+    .hero-visual {
+      animation: appear 1s .15s ease both;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% { translate: 0 0; }
+      50% { translate: 0 -12px; }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(.96); }
+      50% { transform: scale(1.04); }
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 850px) {
+      .container {
+        width: calc(100% - 36px);
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 18px;
+        right: 18px;
+        padding: 22px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: white;
+        box-shadow: 0 15px 35px #15234a12;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .navbar > .button {
+        display: none;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .hero {
+        padding: 65px 0 45px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .hero-visual {
+        height: 350px;
+      }
+
+      .visual-glow {
+        width: 290px;
+        height: 290px;
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .section-heading > p {
+        margin-top: 17px;
+      }
+
+      .services-grid,
+      .process-grid,
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        min-height: 0;
+      }
+
+      .contact-box {
+        display: block;
+        padding: 35px 25px;
+      }
+
+      .contact-box .button {
+        margin-top: 22px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 48px;
+        letter-spacing: -2.8px;
+      }
+
+      .hero-description {
+        font-size: 14px;
+      }
+
+      .hero-visual {
+        height: 315px;
+      }
+
+      .dashboard {
+        padding: 13px;
+        min-height: 260px;
+      }
+
+      .floating-card {
+        padding: 9px 11px;
+      }
+
+      .floating-one {
+        top: 8px;
+      }
+
+      .floating-two {
+        bottom: 8px;
+      }
+
+      section.content-section {
+        padding: 72px 0;
+      }
+
+      .value-inner {
+        justify-content: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .contact-socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .contact-social {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 22px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      transition: .3s ease;
+    }
+
+    .contact-social svg,
+    .contact-social img {
+      width: 21px;
+      height: 21px;
+      flex-shrink: 0;
+    }
+
+    .contact-social img {
+      object-fit: contain;
+    }
+
+    .contact-social span {
+      font-size: 16px;
+    }
+
+    .contact-social.email {
+      background: #fff;
+      color: #202638;
+      border: 1px solid #e5eaf2;
+    }
+
+    .contact-social.instagram {
+      background: linear-gradient(110deg, #2455ed, #17a9cf);
+      color: #fff;
+      border: 1px solid transparent;
+    }
+
+    .contact-social:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(36, 85, 237, .15);
+    }
+
+    @media (max-width: 480px) {
+      .contact-socials {
+        flex-direction: column;
+      }
+
+      .contact-social {
+        width: 100%;
+        box-sizing: border-box;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVEGAÇÃO -->
+
+  <header>
+    <div class="container navbar">
+
+      <a href="#" class="logo">
+        <div class="logo-mark">N</div>
+        <div>
+          NX<span>bytes</span>
+          <small>DIGITAL</small>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#solucoes">Soluções</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#processo">Como funciona</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <a href="#contato" class="button">
+        Solicitar orçamento ↗
+      </a>
+
+      <button class="menu-button" id="menuButton" aria-label="Abrir menu">
+        ☰
+      </button>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div class="hero-copy">
+
+          <div class="eyebrow">
+            <i></i>
+            TECNOLOGIA QUE APROXIMA MARCAS E PESSOAS
+          </div>
+
+          <h1>
+            Sua marca merece estar em
+            <span>outro nível.</span>
+          </h1>
+
+          <p class="hero-description">
+            Criamos sites modernos que valorizam seu negócio,
+            encantam seus clientes e transformam sua presença
+            digital em novas oportunidades.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#contato" class="button">
+              Quero meu novo site ↗
+            </a>
+
+            <a href="#solucoes" class="button button-outline">
+              Conheça a NXbytes ↓
+            </a>
+          </div>
+
+          <div class="hero-proof">
+            <div class="proof-dots">
+              <i></i><i></i><i></i>
+            </div>
+
+            <span>
+              <strong>Design + tecnologia</strong><br>
+              para negócios com ambição.
+            </span>
+          </div>
+
+        </div>
+
+        <!-- ELEMENTO VISUAL PRINCIPAL -->
+
+        <div class="hero-visual">
+
+          <div class="visual-glow"></div>
+
+          <div class="dashboard">
+
+            <div class="dashboard-top">
+              <div class="dashboard-logo">
+                NX<span>bytes</span> / painel
+              </div>
+
+              <div class="online">
+                ● EXPERIÊNCIA DIGITAL
+              </div>
+            </div>
+
+            <h3>Seu negócio em destaque</h3>
+
+            <p>
+              Uma presença digital que trabalha por você.
+            </p>
+
+            <div class="dashboard-grid">
+
+              <div class="dashboard-card">
+                <small>Visual da sua marca</small>
+                <strong>Único.</strong>
+
+                <div class="chart">
+                  <i></i><i></i><i></i>
+                  <i></i><i></i><i></i>
+                </div>
+              </div>
+
+              <div class="dashboard-card">
+                <small>Seu próximo passo</small>
+                <strong>Online ↗</strong>
+
+                <div style="margin-top:13px;height:7px;background:#edf0f5;border-radius:10px">
+                  <i style="display:block;width:78%;height:100%;background:linear-gradient(90deg,#2455ed,#17c6d6);border-radius:10px"></i>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="floating-card floating-one">
+            <small>DESIGN RESPONSIVO</small>
+            <strong>Em cada tela.</strong>
+          </div>
+
+          <div class="floating-card floating-two">
+            <small>SEU NEGÓCIO, MAIS VISÍVEL</small>
+            <strong>Presença que conecta ↗</strong>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- DIFERENCIAIS -->
+
+    <div class="value-strip">
+      <div class="container value-inner">
+        <small>O que move cada projeto</small>
+        <strong>ESTRATÉGIA</strong>
+        <strong>DESIGN</strong>
+        <strong>TECNOLOGIA</strong>
+        <strong>EXPERIÊNCIA</strong>
+      </div>
+    </div>
+
+    <!-- SERVIÇOS -->
+
+    <section class="content-section" id="solucoes">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <div>
+            <div class="section-tag">Soluções digitais</div>
+            <h2>Ferramentas para sua empresa crescer.</h2>
+          </div>
+
+          <p>
+            Do primeiro clique ao contato com sua equipe:
+            criamos experiências simples de usar e feitas
+            para valorizar sua marca.
+          </p>
+        </div>
+
+        <div class="services-grid">
+
+          <article class="service-card reveal">
+            <div class="service-icon">⌘</div>
+            <h3>Sites institucionais</h3>
+
+            <p>
+              Apresente sua empresa, seus diferenciais e seus
+              serviços com uma página profissional, rápida
+              e adaptada a celulares.
+            </p>
+
+            <a href="#contato">Conhecer solução ↗</a>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">▦</div>
+            <h3>Catálogos digitais</h3>
+
+            <p>
+              Mostre seus produtos de forma organizada,
+              com fotos, descrições e caminhos simples
+              para o cliente pedir pelo WhatsApp.
+            </p>
+
+            <a href="#contato">Conhecer solução ↗</a>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">✳</div>
+            <h3>Landing pages</h3>
+
+            <p>
+              Páginas focadas em campanhas, produtos ou
+              serviços, com comunicação direta e chamadas
+              para ação bem posicionadas.
+            </p>
+
+            <a href="#contato">Conhecer solução ↗</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFÓLIO -->
+
+    <section class="content-section portfolio" id="portfolio">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <div>
+            <div class="section-tag">Direção criativa</div>
+            <h2>Uma boa experiência faz a marca ser lembrada.</h2>
+          </div>
+
+          <p>
+            Estudos conceituais para mostrar caminhos criativos.
+            São demonstrações, não trabalhos de clientes.
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+
+          <article class="project-card reveal">
+
+            <div class="project-art">
+              <strong>VIVA</strong>
+            </div>
+
+            <small>CONCEITO 01 · VAREJO</small>
+
+            <h3>
+              Uma vitrine que dá vontade de explorar.
+            </h3>
+
+            <p>
+              Conceito de catálogo digital para uma marca de moda.
+            </p>
+
+          </article>
+
+          <article class="project-card reveal">
+
+            <div class="project-art">
+              <strong>ORIGEM</strong>
+            </div>
+
+            <small>CONCEITO 02 · GASTRONOMIA</small>
+
+            <h3>
+              O sabor começa antes do primeiro pedido.
+            </h3>
+
+            <p>
+              Conceito de experiência digital para um restaurante.
+            </p>
+
+          </article>
+
+        </div>
+
+        <p class="portfolio-note">
+          * Os projetos apresentados são demonstrações conceituais da NXbytes Digital.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- PROCESSO -->
+
+    <section class="content-section" id="processo">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <div>
+            <div class="section-tag">Nosso processo</div>
+            <h2>Do planejamento à publicação, sem complicação.</h2>
+          </div>
+
+          <p>
+            Você acompanha cada etapa e participa das decisões
+            importantes. Transparência do começo ao fim.
+          </p>
+        </div>
+
+        <div class="process-grid">
+
+          <article class="process-card reveal">
+            <div class="process-number">01</div>
+            <h3>Entendemos seu negócio</h3>
+
+            <p>
+              Conversamos sobre sua empresa, seus clientes
+              e o que o site precisa alcançar.
+            </p>
+          </article>
+
+          <article class="process-card reveal">
+            <div class="process-number">02</div>
+            <h3>Desenhamos e desenvolvemos</h3>
+
+            <p>
+              Criamos a estrutura, apresentamos a proposta
+              e refinamos com seu feedback.
+            </p>
+          </article>
+
+          <article class="process-card reveal">
+            <div class="process-number">03</div>
+            <h3>Publicamos seu site</h3>
+
+            <p>
+              Com tudo aprovado, colocamos o projeto no ar
+              e orientamos você na entrega.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+
+    <div class="contact-socials">
+
+      <a
+        class="contact-social email"
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=nxbytestec@gmail.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Enviar email para NXbytes Digital pelo Gmail"
+      >
+        <img
+          src="https://www.gstatic.com/images/branding/product/1x/gmail_2020q4_48dp.png"
+          alt="Gmail"
+        >
+        Enviar e-mail
+        <span>↗</span>
+      </a>
+
+      <a
+        class="contact-social instagram"
+        href="https://www.instagram.com/nxbytesdigital/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visitar Instagram da NXbytes Digital"
+      >
+        <svg viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.8">
+          <rect x="3" y="3" width="18" height="18" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+        </svg>
+        Instagram
+        <span>↗</span>
+      </a>
+
+    </div>
+
+  </main>
+
+  <!-- RODAPÉ -->
+
+  <footer>
+    <div class="container footer-inner">
+
+      <a href="#" class="logo">
+        <div class="logo-mark">N</div>
+        <div>
+          NX<span>bytes</span>
+          <small>DIGITAL</small>
+        </div>
+      </a>
+
+      <span>
+        © <span id="year"></span> NXbytes Digital.
+        Todos os direitos reservados.
+      </span>
+
+      <a href="mailto:nxbytestec@gmail.com">
+        nxbytestec@gmail.com
+      </a>
+
+    </div>
+  </footer>
+
+  <script>
+    // ANIMAÇÕES AO ROLAR A PÁGINA
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    document.querySelectorAll(".reveal").forEach((element) => {
+      observer.observe(element);
+    });
+
+    // ANO AUTOMÁTICO NO RODAPÉ
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // MENU MOBILE
+
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+
+    menuButton.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+
+      menuButton.textContent =
+        navLinks.classList.contains("open") ? "×" : "☰";
+    });
+
+    // FECHAR MENU AO CLICAR EM UM LINK
+
+    document.querySelectorAll(".nav-links a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuButton.textContent = "☰";
+      });
+    });
+  </script>
+
+</body>
+</html>
