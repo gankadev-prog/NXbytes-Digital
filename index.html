@@ -605,63 +605,58 @@
 
     .portfolio-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
     }
 
     .project-card {
-      padding: 23px;
+      display: flex;
+      flex-direction: column;
+      padding: 17px;
       border: 1px solid #ffffff25;
       border-radius: 21px;
       background: #ffffff0b;
       transition: .3s;
+      min-width: 0;
     }
 
     .project-card:hover {
       transform: translateY(-6px);
       background: #ffffff13;
+      border-color: #ffffff55;
     }
 
     .project-art {
-      height: 175px;
-      display: grid;
-      place-items: center;
+      height: 210px;
       position: relative;
       overflow: hidden;
       border-radius: 14px;
-      background: linear-gradient(130deg, #2055ec, #22c8d3);
+      background: #263c56;
     }
 
-    .project-art::before,
+    .project-art img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform .6s ease;
+    }
+
+    .project-card:hover .project-art img {
+      transform: scale(1.06);
+    }
+
     .project-art::after {
       content: "";
       position: absolute;
-      width: 180px;
-      height: 180px;
-      border: 1px solid #ffffff66;
-      border-radius: 50%;
-    }
-
-    .project-art::after {
-      width: 260px;
-      height: 260px;
-    }
-
-    .project-art strong {
-      position: relative;
-      z-index: 1;
-      font-family: "Manrope", sans-serif;
-      font-size: 48px;
-      letter-spacing: -3px;
-    }
-
-    .project-card:nth-child(2) .project-art {
-      background: linear-gradient(130deg, #7954e8, #e46eaa);
+      inset: 45% 0 0;
+      background: linear-gradient(transparent, rgba(8,18,38,.42));
+      pointer-events: none;
     }
 
     .project-card > small {
       display: block;
-      margin-top: 18px;
+      margin-top: 20px;
       color: #7ce6e8;
       font-size: 9px;
       font-weight: 800;
@@ -669,21 +664,45 @@
     }
 
     .project-card h3 {
-      margin: 8px 0;
+      margin: 9px 0;
       font-family: "Manrope", sans-serif;
       font-size: 19px;
     }
 
     .project-card p {
       color: #c5cde0;
-      font-size: 11px;
-      line-height: 1.7;
+      font-size: 12px;
+      line-height: 1.8;
+      flex-grow: 1;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      align-self: flex-start;
+      margin-top: 22px;
+      padding: 11px 15px;
+      border: 1px solid #ffffff40;
+      border-radius: 50px;
+      color: white;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .5px;
+      transition: .25s;
+    }
+
+    .project-link:hover {
+      color: #101c40;
+      background: white;
+      border-color: white;
     }
 
     .portfolio-note {
-      margin-top: 20px;
+      margin-top: 22px;
       color: #aab7d2;
       font-size: 11px;
+      line-height: 1.7;
     }
 
     /* PROCESS */
@@ -806,6 +825,12 @@
 
     /* RESPONSIVE */
 
+    @media (max-width: 1000px) {
+      .portfolio-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
     @media (max-width: 850px) {
       .container {
         width: calc(100% - 36px);
@@ -866,8 +891,7 @@
       }
 
       .services-grid,
-      .process-grid,
-      .portfolio-grid {
+      .process-grid {
         grid-template-columns: 1fr;
       }
 
@@ -882,6 +906,16 @@
 
       .contact-box .button {
         margin-top: 22px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-art {
+        height: 220px;
       }
     }
 
@@ -939,69 +973,6 @@
         transform: none;
       }
     }
-
-    .contact-socials {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 26px;
-    }
-
-    .contact-social {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 15px 22px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 700;
-      transition: .3s ease;
-    }
-
-    .contact-social svg,
-    .contact-social img {
-      width: 21px;
-      height: 21px;
-      flex-shrink: 0;
-    }
-
-    .contact-social img {
-      object-fit: contain;
-    }
-
-    .contact-social span {
-      font-size: 16px;
-    }
-
-    .contact-social.email {
-      background: #fff;
-      color: #202638;
-      border: 1px solid #e5eaf2;
-    }
-
-    .contact-social.instagram {
-      background: linear-gradient(110deg, #2455ed, #17a9cf);
-      color: #fff;
-      border: 1px solid transparent;
-    }
-
-    .contact-social:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 28px rgba(36, 85, 237, .15);
-    }
-
-    @media (max-width: 480px) {
-      .contact-socials {
-        flex-direction: column;
-      }
-
-      .contact-social {
-        width: 100%;
-        box-sizing: border-box;
-      }
-    }
   </style>
 </head>
 
@@ -1031,7 +1002,7 @@
         Solicitar orçamento ↗
       </a>
 
-      <button class="menu-button" id="menuButton" aria-label="Abrir menu">
+      <button class="menu-button" id="menuButton" aria-label="Abrir menu" aria-expanded="false">
         ☰
       </button>
 
@@ -1230,58 +1201,123 @@
 
         <div class="section-heading reveal">
           <div>
-            <div class="section-tag">Direção criativa</div>
-            <h2>Uma boa experiência faz a marca ser lembrada.</h2>
+            <div class="section-tag">Portfólio demonstrativo</div>
+            <h2>Projetos criados para diferentes experiências.</h2>
           </div>
 
           <p>
-            Estudos conceituais para mostrar caminhos criativos.
-            São demonstrações, não trabalhos de clientes.
+            Explore algumas demonstrações de sites desenvolvidos
+            para diferentes segmentos e propostas visuais.
           </p>
         </div>
 
         <div class="portfolio-grid">
 
+          <!-- PROJETO 01: SUA EMPRESA -->
+
           <article class="project-card reveal">
 
             <div class="project-art">
-              <strong>VIVA</strong>
+              <img
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=85"
+                alt="Projeto conceitual de arquitetura e construção"
+                loading="lazy"
+              >
             </div>
 
-            <small>CONCEITO 01 · VAREJO</small>
+            <small>PROJETO 01 · ARQUITETURA E ENGENHARIA</small>
 
-            <h3>
-              Uma vitrine que dá vontade de explorar.
-            </h3>
+            <h3>Sua Empresa</h3>
 
             <p>
-              Conceito de catálogo digital para uma marca de moda.
+              Uma apresentação institucional com estética
+              contemporânea, destacando projetos, serviços
+              e a identidade de uma empresa.
             </p>
+
+            <a
+              href="https://gankadev-prog.github.io/site-exemplo-2/"
+              class="project-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Explorar projeto ↗
+            </a>
 
           </article>
 
+          <!-- PROJETO 02: SUA CLÍNICA -->
+
           <article class="project-card reveal">
 
             <div class="project-art">
-              <strong>ORIGEM</strong>
+              <img
+                src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=85"
+                alt="Ambiente moderno de clínica"
+                loading="lazy"
+              >
             </div>
 
-            <small>CONCEITO 02 · GASTRONOMIA</small>
+            <small>PROJETO 02 · SAÚDE E BEM-ESTAR</small>
 
-            <h3>
-              O sabor começa antes do primeiro pedido.
-            </h3>
+            <h3>Sua Clínica</h3>
 
             <p>
-              Conceito de experiência digital para um restaurante.
+              Uma experiência digital acolhedora e elegante,
+              pensada para apresentar especialidades,
+              transmitir confiança e facilitar o contato.
             </p>
+
+            <a
+              href="https://gankadev-prog.github.io/site-exemplo-1/"
+              class="project-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Explorar projeto ↗
+            </a>
+
+          </article>
+
+          <!-- PROJETO 03: CASA DO MAR -->
+
+          <article class="project-card reveal">
+
+            <div class="project-art">
+              <img
+                src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=900&q=85"
+                alt="Hotel boutique com piscina e paisagem tropical"
+                loading="lazy"
+              >
+            </div>
+
+            <small>PROJETO 03 · HOTELARIA E TURISMO</small>
+
+            <h3>Casa do Mar</h3>
+
+            <p>
+              Um conceito de hotel boutique com identidade
+              sofisticada, apresentação de acomodações
+              e foco na experiência de hospedagem.
+            </p>
+
+            <a
+              href="https://gankadev-prog.github.io/site-exemplo-3/"
+              class="project-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Explorar projeto ↗
+            </a>
 
           </article>
 
         </div>
 
         <p class="portfolio-note">
-          * Os projetos apresentados são demonstrações conceituais da NXbytes Digital.
+          * Todos os projetos apresentados são demonstrações conceituais
+          desenvolvidas pela NXbytes Digital. Não representam trabalhos
+          contratados por clientes reais.
         </p>
 
       </div>
@@ -1432,10 +1468,10 @@
     const navLinks = document.getElementById("navLinks");
 
     menuButton.addEventListener("click", () => {
-      navLinks.classList.toggle("open");
+      const isOpen = navLinks.classList.toggle("open");
 
-      menuButton.textContent =
-        navLinks.classList.contains("open") ? "×" : "☰";
+      menuButton.textContent = isOpen ? "×" : "☰";
+      menuButton.setAttribute("aria-expanded", isOpen);
     });
 
     // FECHAR MENU AO CLICAR EM UM LINK
@@ -1444,6 +1480,7 @@
       link.addEventListener("click", () => {
         navLinks.classList.remove("open");
         menuButton.textContent = "☰";
+        menuButton.setAttribute("aria-expanded", "false");
       });
     });
   </script>
